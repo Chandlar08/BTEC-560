@@ -1,0 +1,659 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.77 (8007) x86_64-apple-darwin17.0]
+
+[Workspace restored from /Users/chandlar/.RData]
+[History restored from /Users/chandlar/.Rapp.history]
+
+> if(!require(devtools)) install.packages("devtools") devtools::install_github("kassambara/ggpubr")
+Error: unexpected symbol in "if(!require(devtools)) install.packages("devtools") devtools"
+> library("ggpubr")
+Error in library("ggpubr") : there is no package called ‘ggpubr’
+> if(!require(devtools))
++ install.packages("devtools") devtools::install_github("kassambara/ggpubr")
+Error: unexpected symbol in:
+"if(!require(devtools))
+install.packages("devtools") devtools"
+> if(!require(devtools))install.packages("devtools") devtools::install_github("kassambara/ggpubr")
+Error: unexpected symbol in "if(!require(devtools))install.packages("devtools") devtools"
+> if(!require(devtools)) install.packages("devtools")
+Loading required package: devtools
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies ‘utf8’, ‘pillar’, ‘pkgconfig’, ‘vctrs’, ‘askpass’, ‘credentials’, ‘sys’, ‘zip’, ‘gitcreds’, ‘ini’, ‘fastmap’, ‘highr’, ‘xfun’, ‘diffobj’, ‘fansi’, ‘rematch2’, ‘tibble’, ‘clipr’, ‘crayon’, ‘curl’, ‘gert’, ‘gh’, ‘glue’, ‘jsonlite’, ‘purrr’, ‘rappdirs’, ‘rprojroot’, ‘whisker’, ‘yaml’, ‘processx’, ‘R6’, ‘mime’, ‘openssl’, ‘cachem’, ‘prettyunits’, ‘digest’, ‘xopen’, ‘brew’, ‘commonmark’, ‘knitr’, ‘stringi’, ‘stringr’, ‘xml2’, ‘cpp11’, ‘brio’, ‘evaluate’, ‘magrittr’, ‘praise’, ‘ps’, ‘waldo’, ‘usethis’, ‘callr’, ‘cli’, ‘desc’, ‘ellipsis’, ‘fs’, ‘httr’, ‘lifecycle’, ‘memoise’, ‘pkgbuild’, ‘pkgload’, ‘rcmdcheck’, ‘remotes’, ‘rlang’, ‘roxygen2’, ‘rstudioapi’, ‘rversions’, ‘sessioninfo’, ‘testthat’, ‘withr’
+
+
+  There is a binary version available but the source version is later:
+     binary source needs_compilation
+desc  1.4.0  1.4.1             FALSE
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/utf8_1.2.2.tgz'
+Content type 'application/x-gzip' length 196736 bytes (192 KB)
+==================================================
+downloaded 192 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/pillar_1.7.0.tgz'
+Content type 'application/x-gzip' length 742246 bytes (724 KB)
+==================================================
+downloaded 724 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/pkgconfig_2.0.3.tgz'
+Content type 'application/x-gzip' length 17777 bytes (17 KB)
+==================================================
+downloaded 17 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/vctrs_0.3.8.tgz'
+Content type 'application/x-gzip' length 1413008 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/askpass_1.1.tgz'
+Content type 'application/x-gzip' length 21566 bytes (21 KB)
+==================================================
+downloaded 21 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/credentials_1.3.2.tgz'
+Content type 'application/x-gzip' length 171184 bytes (167 KB)
+==================================================
+downloaded 167 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/sys_3.4.tgz'
+Content type 'application/x-gzip' length 47336 bytes (46 KB)
+==================================================
+downloaded 46 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/zip_2.2.0.tgz'
+Content type 'application/x-gzip' length 212821 bytes (207 KB)
+==================================================
+downloaded 207 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/gitcreds_0.1.1.tgz'
+Content type 'application/x-gzip' length 91981 bytes (89 KB)
+==================================================
+downloaded 89 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ini_0.3.1.tgz'
+Content type 'application/x-gzip' length 13224 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/fastmap_1.1.0.tgz'
+Content type 'application/x-gzip' length 187599 bytes (183 KB)
+==================================================
+downloaded 183 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/highr_0.9.tgz'
+Content type 'application/x-gzip' length 39056 bytes (38 KB)
+==================================================
+downloaded 38 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/xfun_0.30.tgz'
+Content type 'application/x-gzip' length 390425 bytes (381 KB)
+==================================================
+downloaded 381 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/diffobj_0.3.5.tgz'
+Content type 'application/x-gzip' length 999443 bytes (976 KB)
+==================================================
+downloaded 976 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/fansi_1.0.2.tgz'
+Content type 'application/x-gzip' length 362980 bytes (354 KB)
+==================================================
+downloaded 354 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rematch2_2.1.2.tgz'
+Content type 'application/x-gzip' length 44727 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/tibble_3.1.6.tgz'
+Content type 'application/x-gzip' length 846646 bytes (826 KB)
+==================================================
+downloaded 826 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/clipr_0.8.0.tgz'
+Content type 'application/x-gzip' length 50934 bytes (49 KB)
+==================================================
+downloaded 49 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/crayon_1.5.0.tgz'
+Content type 'application/x-gzip' length 159122 bytes (155 KB)
+==================================================
+downloaded 155 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/curl_4.3.2.tgz'
+Content type 'application/x-gzip' length 862270 bytes (842 KB)
+==================================================
+downloaded 842 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/gert_1.5.0.tgz'
+Content type 'application/x-gzip' length 2085354 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/gh_1.3.0.tgz'
+Content type 'application/x-gzip' length 137863 bytes (134 KB)
+==================================================
+downloaded 134 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/glue_1.6.2.tgz'
+Content type 'application/x-gzip' length 151977 bytes (148 KB)
+==================================================
+downloaded 148 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/jsonlite_1.8.0.tgz'
+Content type 'application/x-gzip' length 1106495 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/purrr_0.3.4.tgz'
+Content type 'application/x-gzip' length 417295 bytes (407 KB)
+==================================================
+downloaded 407 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rappdirs_0.3.3.tgz'
+Content type 'application/x-gzip' length 45542 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rprojroot_2.0.2.tgz'
+Content type 'application/x-gzip' length 96326 bytes (94 KB)
+==================================================
+downloaded 94 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/whisker_0.4.tgz'
+Content type 'application/x-gzip' length 65505 bytes (63 KB)
+==================================================
+downloaded 63 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/yaml_2.3.5.tgz'
+Content type 'application/x-gzip' length 205004 bytes (200 KB)
+==================================================
+downloaded 200 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/processx_3.5.2.tgz'
+Content type 'application/x-gzip' length 296180 bytes (289 KB)
+==================================================
+downloaded 289 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/R6_2.5.1.tgz'
+Content type 'application/x-gzip' length 82529 bytes (80 KB)
+==================================================
+downloaded 80 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/mime_0.12.tgz'
+Content type 'application/x-gzip' length 34812 bytes (33 KB)
+==================================================
+downloaded 33 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/openssl_2.0.0.tgz'
+Content type 'application/x-gzip' length 2871576 bytes (2.7 MB)
+==================================================
+downloaded 2.7 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/cachem_1.0.6.tgz'
+Content type 'application/x-gzip' length 66261 bytes (64 KB)
+==================================================
+downloaded 64 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/prettyunits_1.1.1.tgz'
+Content type 'application/x-gzip' length 34694 bytes (33 KB)
+==================================================
+downloaded 33 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/digest_0.6.29.tgz'
+Content type 'application/x-gzip' length 298460 bytes (291 KB)
+==================================================
+downloaded 291 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/xopen_1.0.0.tgz'
+Content type 'application/x-gzip' length 22444 bytes (21 KB)
+==================================================
+downloaded 21 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/brew_1.0-7.tgz'
+Content type 'application/x-gzip' length 74361 bytes (72 KB)
+==================================================
+downloaded 72 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/commonmark_1.7.tgz'
+Content type 'application/x-gzip' length 310444 bytes (303 KB)
+==================================================
+downloaded 303 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/knitr_1.37.tgz'
+Content type 'application/x-gzip' length 1420007 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/stringi_1.7.6.tgz'
+Content type 'application/x-gzip' length 14635208 bytes (14.0 MB)
+==================================================
+downloaded 14.0 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/stringr_1.4.0.tgz'
+Content type 'application/x-gzip' length 210036 bytes (205 KB)
+==================================================
+downloaded 205 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/xml2_1.3.3.tgz'
+Content type 'application/x-gzip' length 2335634 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/cpp11_0.4.2.tgz'
+Content type 'application/x-gzip' length 304435 bytes (297 KB)
+==================================================
+downloaded 297 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/brio_1.1.3.tgz'
+Content type 'application/x-gzip' length 40397 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/evaluate_0.15.tgz'
+Content type 'application/x-gzip' length 77269 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/magrittr_2.0.2.tgz'
+Content type 'application/x-gzip' length 227333 bytes (222 KB)
+==================================================
+downloaded 222 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/praise_1.0.0.tgz'
+Content type 'application/x-gzip' length 16129 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ps_1.6.0.tgz'
+Content type 'application/x-gzip' length 286126 bytes (279 KB)
+==================================================
+downloaded 279 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/waldo_0.3.1.tgz'
+Content type 'application/x-gzip' length 93928 bytes (91 KB)
+==================================================
+downloaded 91 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/usethis_2.1.5.tgz'
+Content type 'application/x-gzip' length 771607 bytes (753 KB)
+==================================================
+downloaded 753 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/callr_3.7.0.tgz'
+Content type 'application/x-gzip' length 438147 bytes (427 KB)
+==================================================
+downloaded 427 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/cli_3.2.0.tgz'
+Content type 'application/x-gzip' length 1153069 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ellipsis_0.3.2.tgz'
+Content type 'application/x-gzip' length 36499 bytes (35 KB)
+==================================================
+downloaded 35 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/fs_1.5.2.tgz'
+Content type 'application/x-gzip' length 545943 bytes (533 KB)
+==================================================
+downloaded 533 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/httr_1.4.2.tgz'
+Content type 'application/x-gzip' length 503034 bytes (491 KB)
+==================================================
+downloaded 491 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/lifecycle_1.0.1.tgz'
+Content type 'application/x-gzip' length 105712 bytes (103 KB)
+==================================================
+downloaded 103 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/memoise_2.0.1.tgz'
+Content type 'application/x-gzip' length 48111 bytes (46 KB)
+==================================================
+downloaded 46 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/pkgbuild_1.3.1.tgz'
+Content type 'application/x-gzip' length 145707 bytes (142 KB)
+==================================================
+downloaded 142 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/pkgload_1.2.4.tgz'
+Content type 'application/x-gzip' length 154490 bytes (150 KB)
+==================================================
+downloaded 150 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rcmdcheck_1.4.0.tgz'
+Content type 'application/x-gzip' length 168344 bytes (164 KB)
+==================================================
+downloaded 164 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/remotes_2.4.2.tgz'
+Content type 'application/x-gzip' length 395393 bytes (386 KB)
+==================================================
+downloaded 386 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rlang_1.0.2.tgz'
+Content type 'application/x-gzip' length 1776918 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/roxygen2_7.1.2.tgz'
+Content type 'application/x-gzip' length 859689 bytes (839 KB)
+==================================================
+downloaded 839 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rstudioapi_0.13.tgz'
+Content type 'application/x-gzip' length 273125 bytes (266 KB)
+==================================================
+downloaded 266 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rversions_2.1.1.tgz'
+Content type 'application/x-gzip' length 64526 bytes (63 KB)
+==================================================
+downloaded 63 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/sessioninfo_1.2.2.tgz'
+Content type 'application/x-gzip' length 183920 bytes (179 KB)
+==================================================
+downloaded 179 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/testthat_3.1.2.tgz'
+Content type 'application/x-gzip' length 2962692 bytes (2.8 MB)
+==================================================
+downloaded 2.8 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/withr_2.5.0.tgz'
+Content type 'application/x-gzip' length 229105 bytes (223 KB)
+==================================================
+downloaded 223 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/devtools_2.4.3.tgz'
+Content type 'application/x-gzip' length 420183 bytes (410 KB)
+==================================================
+downloaded 410 KB
+
+
+The downloaded binary packages are in
+	/var/folders/s7/rj_v6wxd0kv70bvnq8h8dcmm0000gn/T//RtmprKjQyp/downloaded_packages
+installing the source package ‘desc’
+
+trying URL 'https://mirrors.nics.utk.edu/cran/src/contrib/desc_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 80670 bytes (78 KB)
+==================================================
+downloaded 78 KB
+
+* installing *source* package ‘desc’ ...
+** package ‘desc’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (desc)
+
+The downloaded source packages are in
+	‘/private/var/folders/s7/rj_v6wxd0kv70bvnq8h8dcmm0000gn/T/RtmprKjQyp/downloaded_packages’
+Warning message:
+In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called ‘devtools’
+> devtools::install_github("kassambara/ggpubr")
+Downloading GitHub repo kassambara/ggpubr@HEAD
+Installing 39 packages: colorspace, viridisLite, RColorBrewer, munsell, labeling, farver, scales, isoband, gtable, tidyselect, ggplot2, tidyr, generics, backports, MatrixModels, SparseM, numDeriv, dplyr, broom, sp, RcppEigen, Rcpp, nloptr, minqa, lme4, maptools, quantreg, pbkrtest, abind, carData, car, corrplot, rstatix, polynom, gridExtra, ggsignif, cowplot, ggsci, ggrepel
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/colorspace_2.0-3.tgz'
+Content type 'application/x-gzip' length 2625187 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/viridisLite_0.4.0.tgz'
+Content type 'application/x-gzip' length 1296462 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/RColorBrewer_1.1-2.tgz'
+Content type 'application/x-gzip' length 52954 bytes (51 KB)
+==================================================
+downloaded 51 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/munsell_0.5.0.tgz'
+Content type 'application/x-gzip' length 241442 bytes (235 KB)
+==================================================
+downloaded 235 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/labeling_0.4.2.tgz'
+Content type 'application/x-gzip' length 60282 bytes (58 KB)
+==================================================
+downloaded 58 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/farver_2.1.0.tgz'
+Content type 'application/x-gzip' length 1949853 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/scales_1.1.1.tgz'
+Content type 'application/x-gzip' length 550673 bytes (537 KB)
+==================================================
+downloaded 537 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/isoband_0.2.5.tgz'
+Content type 'application/x-gzip' length 3379737 bytes (3.2 MB)
+==================================================
+downloaded 3.2 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/gtable_0.3.0.tgz'
+Content type 'application/x-gzip' length 431504 bytes (421 KB)
+==================================================
+downloaded 421 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/tidyselect_1.1.2.tgz'
+Content type 'application/x-gzip' length 201122 bytes (196 KB)
+==================================================
+downloaded 196 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ggplot2_3.3.5.tgz'
+Content type 'application/x-gzip' length 4125542 bytes (3.9 MB)
+==================================================
+downloaded 3.9 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/tidyr_1.2.0.tgz'
+Content type 'application/x-gzip' length 1001606 bytes (978 KB)
+==================================================
+downloaded 978 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/generics_0.1.2.tgz'
+Content type 'application/x-gzip' length 77002 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/backports_1.4.1.tgz'
+Content type 'application/x-gzip' length 98448 bytes (96 KB)
+==================================================
+downloaded 96 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/MatrixModels_0.5-0.tgz'
+Content type 'application/x-gzip' length 443596 bytes (433 KB)
+==================================================
+downloaded 433 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/SparseM_1.81.tgz'
+Content type 'application/x-gzip' length 1095487 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/numDeriv_2016.8-1.1.tgz'
+Content type 'application/x-gzip' length 113185 bytes (110 KB)
+==================================================
+downloaded 110 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/dplyr_1.0.8.tgz'
+Content type 'application/x-gzip' length 1295740 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/broom_0.7.12.tgz'
+Content type 'application/x-gzip' length 1798190 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/sp_1.4-6.tgz'
+Content type 'application/x-gzip' length 2224315 bytes (2.1 MB)
+==================================================
+downloaded 2.1 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/RcppEigen_0.3.3.9.1.tgz'
+Content type 'application/x-gzip' length 4851252 bytes (4.6 MB)
+==================================================
+downloaded 4.6 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/Rcpp_1.0.8.tgz'
+Content type 'application/x-gzip' length 3281159 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/nloptr_2.0.0.tgz'
+Content type 'application/x-gzip' length 1947314 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/minqa_1.2.4.tgz'
+Content type 'application/x-gzip' length 341842 bytes (333 KB)
+==================================================
+downloaded 333 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/lme4_1.1-28.tgz'
+Content type 'application/x-gzip' length 7362613 bytes (7.0 MB)
+==================================================
+downloaded 7.0 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/maptools_1.1-2.tgz'
+Content type 'application/x-gzip' length 2175333 bytes (2.1 MB)
+==================================================
+downloaded 2.1 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/quantreg_5.88.tgz'
+Content type 'application/x-gzip' length 1637363 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/pbkrtest_0.5.1.tgz'
+Content type 'application/x-gzip' length 352626 bytes (344 KB)
+==================================================
+downloaded 344 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/abind_1.4-5.tgz'
+Content type 'application/x-gzip' length 61526 bytes (60 KB)
+==================================================
+downloaded 60 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/carData_3.0-5.tgz'
+Content type 'application/x-gzip' length 1819983 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/car_3.0-12.tgz'
+Content type 'application/x-gzip' length 1410257 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/corrplot_0.92.tgz'
+Content type 'application/x-gzip' length 3842946 bytes (3.7 MB)
+==================================================
+downloaded 3.7 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/rstatix_0.7.0.tgz'
+Content type 'application/x-gzip' length 605947 bytes (591 KB)
+==================================================
+downloaded 591 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/polynom_1.4-0.tgz'
+Content type 'application/x-gzip' length 308657 bytes (301 KB)
+==================================================
+downloaded 301 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/gridExtra_2.3.tgz'
+Content type 'application/x-gzip' length 1102731 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ggsignif_0.6.3.tgz'
+Content type 'application/x-gzip' length 599399 bytes (585 KB)
+==================================================
+downloaded 585 KB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/cowplot_1.1.1.tgz'
+Content type 'application/x-gzip' length 1373944 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ggsci_2.9.tgz'
+Content type 'application/x-gzip' length 2980064 bytes (2.8 MB)
+==================================================
+downloaded 2.8 MB
+
+trying URL 'https://mirrors.nics.utk.edu/cran/bin/macosx/contrib/4.1/ggrepel_0.9.1.tgz'
+Content type 'application/x-gzip' length 702441 bytes (685 KB)
+==================================================
+downloaded 685 KB
+
+
+The downloaded binary packages are in
+	/var/folders/s7/rj_v6wxd0kv70bvnq8h8dcmm0000gn/T//RtmprKjQyp/downloaded_packages
+✔  checking DESCRIPTION meta-information ...7/rj_v6wxd0kv70bvnq8h8dcmm0000gn/T/RtmprKjQyp/remotes2628761c31d5/kassambara-ggpubr-ac5a01f/DESCRIPTION’ ...
+   
+* installing *source* package ‘ggpubr’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggpubr)
+ 
+> library(ggpubr)
+Loading required package: ggplot2
+> data <- read.csv('https://vincentarelbundock.github.io/Rdatasets/csv/carData/Salaries.csv')
+> cor.test(data$yrs.since.phd, data$salary, method=c("pearson"))
+
+	Pearson's product-moment correlation
+
+data:  data$yrs.since.phd and data$salary
+t = 9.1775, df = 395, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.3346160 0.4971402
+sample estimates:
+      cor 
+0.4192311 
+
+> 
